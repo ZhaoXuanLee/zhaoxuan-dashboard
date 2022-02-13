@@ -181,57 +181,74 @@
   };
 </script>
 
-<h1>My Dashboard</h1>
-<h7>School Timetable</h7>
+<h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><b>My Dashboard</b></h1>
+<h6 style="font-family: Cambria">-School Timetable-</h6>
 
-<table class="table ">
+
+<table class="table text-center table-bordered ">
     <thead>
       <!--for the first row-->
-      <tr>
+      <tr class='table-secondary'>
         <th scope="col">#</th>
         <th scope="col">1</th>
         <th scope="col">2</th>
         <th scope="col">3</th>
         <th scope="col">4</th>
+		<th scope="col">-</th>
         <th scope="col">5</th>
         <th scope="col">6</th>
         <th scope="col">7</th>
         <th scope="col">8</th>
         <th scope="col">9</th>
         <th scope="col">10</th>
-        <th scope="col">11</th>
-        <th scope="col">12</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Monday</th>
+        <th scope="row" class='table-light'>Monday</th>
         {#each timetable.Monday as timeSlot,index}
-        <td colspan="{timeSlot.period}"class="{timeSlot.style}"></td>
+        <td colspan={timeSlot.period} class={timeSlot.style}>
+		<button class='btn' type='button'>{timeSlot.name}</button>
+		</td>
+      {/each}  
+      </tr>
+
+      <tr>
+        <th scope="row" class='table-light'>Tuesday</th>
+		{#each timetable.Tuesday as timeSlot,index}
+        <td colspan={timeSlot.period} class={timeSlot.style}>
+		<button class='btn' type='button'>{timeSlot.name}</button>
+		</td>
       {/each}
-        
       </tr>
+
       <tr>
-        <th scope="row">Tuesday</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <th scope="row" class='table-light'>Wednesday</th>
+        {#each timetable.Wednesday as timeSlot,index}
+        <td colspan={timeSlot.period} class={timeSlot.style}>
+		<button class='btn' type='button'>{timeSlot.name}</button>
+		</td>
+      {/each}
       </tr>
+
       <tr>
-        <th scope="row">Wednesday</th>
-        <td colspan="2"></td>
-        <td></td>
+        <th scope="row" class='table-light'>Thursday</th>
+        {#each timetable.Thursday as timeSlot,index}
+        <td colspan={timeSlot.period} class={timeSlot.style}>
+		<button class='btn' type='button'>{timeSlot.name}</button>
+		</td>
+      {/each}
       </tr>
+
       <tr>
-        <th scope="row">Thursday</th>
-        <td colspan="2"></td>
-        <td></td>
+        <th scope="row" class='table-light'>Friday</th>
+        {#each timetable.Friday as timeSlot,index}
+        <td colspan={timeSlot.period} class={timeSlot.style}>
+		<button class='btn' type='button'>{timeSlot.name}</button>
+		</td>
+      {/each}
       </tr>
-      <tr>
-        <th scope="row">Friday</th>
-        <td colspan="2"></td>
-        <td></td>
-      </tr>
+
     </tbody>
   </table>
 
